@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Banking - Calculator Machine</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">trang chủ</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Công Cụ & Tiện Ích</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Câu hỏi</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services123">Liên Lạc</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <!--<div class="masthead-subheading">Đây Là Công Cụ Giúp Bạn Tính Toán Khoản Vay!</div>
+                 <div class="masthead-heading text-uppercase">It's Nice To Meet You</div> 
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tìm hiểu thêm</a>-->
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Công cụ tính khoản vay</h2>
+                    <h3 class="section-subheading text-muted">Đưa ra lãi suất và tỷ giá.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-7 borderRightCss">
+                        <ul>
+                            <ol><h5 class="my-3"><span class="styleNumber">1</span> Mức Lương:
+                                <input type="number" value="0" class="inputStyle" id="rangeValue2" onchange="onchangeSlide2(value)"></input>
+                            VND &emsp;| &emsp;
+                                <select name="" id="method123">
+                                    <option value="1">Chuyển Khoản</option>
+                                    <option value="2">Tiền Mặt</option>
+                                </select></h5>
+                                <span class="text-muted" style="margin-left: 38px; font-size: 20px;">1 triệu</span><input class="range" id="range2" type="range" name="" step=1000000 value="0" min=1000000, max=50000000
+                                onChange="rangeSlide2(value)" onmousemove="rangeSlide2(value)"><span class="text-muted" style=" font-size: 20px;">50 triệu</span>
+                            </ol><br/><br/>
+                            <ol><h5 class="my-3"><span class="styleNumber1">2</span> Số Tiền Vay Là: 
+                                <input type="number" value="0" class="inputStyle" id="rangeValue1" onchange="onchangeSlide1(value)"></input>
+                            VND</h5>
+                                <span class="text-muted" style="margin-left: 38px; font-size: 20px;">1 triệu</span><input class="range" id="range1" type="range" name="" step=500000 value="0" min=1000000, max=500000000
+                                onChange="rangeSlide1(value)" onmousemove="rangeSlide1(value)"><span class="text-muted" style=" font-size: 20px;">500 triệu</span>
+                            </ol><br/><br/>
+
+                            <ol><h5 class="my-3"><span class="styleNumber1">3</span> Thời Gian Vay:
+                                <input type="number" value="0" class="inputStyle" id="rangeValue" onchange="onchangeSlide(value)"></input>
+                            Tháng</h5>
+                                <span class="text-muted" style="margin-left: 25px; font-size: 20px;">1 tháng</span><input class="range" id="range" type="range" name="" value="0" min="1" max="300"
+                                onChange="rangeSlide(value)" onmousemove="rangeSlide(value)"><span class="text-muted" style=" font-size: 20px;">300 tháng</span>
+                            </ol><br/>
+                            <ol><input class="submitStyle" type="submit" value="Tính Toán"></input></ol>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 marginLeftCss"><br/><br/>
+                        <h4 class="my-3">Số Tiền Trả Tháng Đầu</h4>
+                        <p class="text-muted">Trường hợp xấu nhất : 0 VND</p>
+                        <p class="text-muted">Trường hợp tốt nhất : 0 VND</p>
+                        <br/>
+                        <h4 class="my-3">Tổng Lãi Phải Trả</h4>
+                        <p class="text-muted">Trường hợp xấu nhất : 0 VND</p>
+                        <p class="text-muted">Trường hợp tốt nhất : 0 VND</p>
+                        <br/>
+                        <h4 class="my-3">Tổng Số Tiền Gốc & Lãi Phải Trả</h4>
+                        <p class="text-muted">Trường hợp xấu nhất : 0 VND</p>
+                        <p class="text-muted">Trường hợp tốt nhất : 0 VND</p>
+                    </div>
+                </div>
+
+                <br /><br /><br /><br />
+                <div class="text-center">
+                    <h5 class="section-heading text-uppercase">Kết Quả Các Ngân Hàng Phù Hợp Nhất Với Bạn</h5>
+                </div><br />
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">STT</th>
+                                <th scope="col">Lãi lớn nhất phải trả (%)</th>
+                                <th scope="col">Lãi thấp nhất phải trả (%)</th>
+                                <th scope="col">Số tiền lớn nhất phải trả (VND)</th>
+                                <th scope="col">Số tiền thấp nhất phải trả (VND)</th>
+                                <th scope="col">Tên ngân hàng</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="borderBottomStyle">
+                                <th class="text-muted">1</th>
+                                <td class="text-muted">Mark</td>
+                                <td class="text-muted">Otto</td>
+                                <td class="text-muted">@mdo</td>
+                                <td class="text-muted">@mdo</td>
+                                <td class="text-muted">@mdo</td>
+                              </tr>
+                              <tr class="borderBottomStyle">
+                                <th class="text-muted">2</th>
+                                <td class="text-muted">Jacob</td>
+                                <td class="text-muted">Thornton</td>
+                                <td class="text-muted">@fat</td>
+                                <td class="text-muted">@mdo</td>
+                                <td class="text-muted">@mdo</td>
+                              </tr>
+                              <tr class="borderBottomStyle">
+                                <th class="text-muted">3</th>
+                                <td class="text-muted">Larry</td>
+                                <td class="text-muted">the Bird</td>
+                                <td class="text-muted">@twitter</td>
+                                <td class="text-muted">@mdo</td>
+                                <td class="text-muted">@mdo</td>
+                              </tr>
+                              <tr class="borderBottomStyle">
+                                <th class="text-muted">4</th>
+                                <td class="text-muted">Mark</td>
+                                <td class="text-muted">Otto</td>
+                                <td class="text-muted">@mdo</td>
+                                <td class="text-muted">@mdo</td>
+                                <td class="text-muted">@mdo</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <ul class="pagination" id="floatRightStyle">
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                          </ul>
+                    </div>
+                </div>
+                <br/><br/><br/>
+                <div class="text-center">
+                    <h5 class="section-heading text-uppercase">Kết Quả Lãi Suất (Shinhan)</h5>
+                </div><br />
+                
+                <a class="text-muted" href="#">Gốc cố định, lãi giảm dần</a>&emsp;&emsp;<a href="#" class="text-muted">Gốc, lãi chia đều hàng tháng</a><br/><br/>
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Kỳ hạn</th>
+                                <th scope="col">Lãi phải trả</th>
+                                <th scope="col">Gốc phải trả</th>
+                                <th scope="col">Số tiền phải trả</th>
+                                <th scope="col">Số tiền còn lại</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="borderBottomStyle">
+                                <th class="text-muted">1</th>
+                                <td class="text-muted">Mark</td>
+                                <td class="text-muted">Otto</td>
+                                <td class="text-muted">@mdo</td>
+                                <td class="text-muted">@mdo</td>
+                              </tr>
+                              <tr class="borderBottomStyle">
+                                <th class="text-muted">2</th>
+                                <td class="text-muted">Jacob</td>
+                                <td class="text-muted">Thornton</td>
+                                <td class="text-muted">@fat</td>
+                                <td class="text-muted">@mdo</td>
+                              </tr>
+                              <tr class="borderBottomStyle">
+                                <th class="text-muted">3</th>
+                                <td class="text-muted">Larry</td>
+                                <td class="text-muted">the Bird</td>
+                                <td class="text-muted">@twitter</td>
+                                <td class="text-muted">@mdo</td>
+                              </tr>
+                              <tr class="borderBottomStyle">
+                                <th class="text-muted">4</th>
+                                <td class="text-muted">Mark</td>
+                                <td class="text-muted">Otto</td>
+                                <td class="text-muted">@mdo</td>
+                                <td class="text-muted">@mdo</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <p class="text-muted" id="floatLeftStyle">(*) Áp dụng đối với trường hợp tốt nhất</p>
+                          <ul class="pagination" id="floatRightStyle">
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Clients-->
+        <div class="py-5 bg-light">
+            <div class="container">
+                <div class="logo-slider">
+                    <div class="item"><a href="#"><img src="assets/img/logos/1.png" alt="" style="width: 180px; height: 80px;"></a></div>
+                    <div class="item"><a href="#"><img src="assets/img/logos/2.svg" alt="" style="width: 210px; height: 90px;"></a></div>
+                    <div class="item"><a href="#"><img src="assets/img/logos/3.png" alt="" style="width: 180px; height: 65px;"></a></div>
+                    <div class="item"><a href="#"><img src="assets/img/logos/4.png" alt="" style="width: 180px; height: 86px;"></a></div>
+                    <div class="item"><a href="#"><img src="assets/img/logos/5.png" alt="" style="width: 180px; height: 46px;"></a></div>
+                    <div class="item"><a href="#"><img src="assets/img/logos/7.png" alt="" style="width: 180px; height: 80px;"></a></div>
+                  </div>
+            </div>
+        </div>
+        <!-- Portfolio Grid-->
+        <section class="page-section" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Hỏi & Đáp</h2>
+                    <h3 class="section-subheading text-muted">Giúp người sử dụng nắm rõ các khái niệm khi vay tiền.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/01-thumbnail.jpg" style="height: 301px; border: 1px solid darkgray;" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-subheading text-muted">Chúng tôi là ai?</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/02-thumbnail.jpg"  style="height: 301px; border: 1px solid darkgray;" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-subheading text-muted">Lãi suất danh nghĩa & lãi suất hiệu dụng là gì?</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/03-thumbnail.jpg"  style="height: 301px; border: 1px solid darkgray;" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-subheading text-muted">Các gói cho vay hiện nay?</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/04-thumbnail.jpg" style="height: 301px; border: 1px solid darkgray;" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-subheading text-muted">Khái niệm giải ngân trong khi vay vốn là gì?</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/05-thumbnail.jpg" style="height: 301px; border: 1px solid darkgray;" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-subheading text-muted">Các giấy tờ để có mức lãi suất tốt nhất?</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/06-thumbnail.jpg" style="height: 301px; border: 1px solid darkgray;" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-subheading text-muted">Công thức để tính tiền vay dựa trên lãi suất?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <section id="services123">
+        <footer class="footer py-4 bg-light1">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-left"><span style="color: black;">Liên Lạc Với Chúng Tôi Qua</span></div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-right">
+                        <a class="mr-3" href="#!">Giới Thiệu Về Tôi</a>
+                        <a href="#!">Các Ngân Hàng</a>
+                    </div>
+                </div>
+            </div>
+        </footer></section>
+        
+        <!-- Portfolio Modals-->
+        <!-- Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/01-full.jpg" alt="" />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>Date: January 2020</li>
+                                        <li>Client: Threads</li>
+                                        <li>Category: Illustration</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/02-full.jpg" alt="" />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>Date: January 2020</li>
+                                        <li>Client: Explore</li>
+                                        <li>Category: Graphic Design</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/03-full.jpg" alt="" />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>Date: January 2020</li>
+                                        <li>Client: Finish</li>
+                                        <li>Category: Identity</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/04-full.jpg" alt="" />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>Date: January 2020</li>
+                                        <li>Client: Lines</li>
+                                        <li>Category: Branding</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/05-full.jpg" alt="" />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>Date: January 2020</li>
+                                        <li>Client: Southwest</li>
+                                        <li>Category: Website Design</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 6-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/06-full.jpg" alt="" />
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>Date: January 2020</li>
+                                        <li>Client: Window</li>
+                                        <li>Category: Photography</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+        <script type="text/javascript">
+            $('.logo-slider').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                infinite: true,
+                responsive: [
+                    {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                    },
+                    {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                    }
+                ]
+            });
+
+            function rangeSlide(value) {
+                document.getElementById('rangeValue').value = value;
+                var valueNew = value/3;
+                var color = 'linear-gradient(90deg, rgb(223, 165, 73)' + valueNew + '%, rgb(214,214,214) '+ valueNew +'%)';
+                document.getElementById('range').style.background = color;
+            }
+
+            function onchangeSlide(value) {
+                document.getElementById('range').value = value;
+                var valueNew = value/3;
+                var color = 'linear-gradient(90deg, rgb(223, 165, 73)' + valueNew + '%, rgb(214,214,214) '+ valueNew +'%)';
+                document.getElementById('range').style.background = color;
+            }
+
+            function rangeSlide1(value) {
+                document.getElementById('rangeValue1').value = value;
+            }
+
+            function onchangeSlide1(value) {
+                document.getElementById('range1').value = value;
+            }
+
+            function rangeSlide2(value) {
+                document.getElementById('rangeValue2').value = value;
+            }
+
+            function onchangeSlide2(value) {
+                document.getElementById('range2').value = value;
+            }
+        </script>
+    </body>
+</html>
