@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Banking Server</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+<!--    <script th:src="@{https://code.jquery.com/jquery-1.9.1.min.js}"></script>-->
+    <script th:href="@{/js/style.js}"></script>
+</head>
+<body>
+    <h1>Banking Server</h1>
+    <br/>
+    <!--range-slide-->
+    <div class="sliderValue111">
+        <h3 id="salary">Salary: <span id="cailon2">1</span></h3>
+    </div>
+    <div class="range">
+<!--        <div class="sliderValue">-->
+<!--            <span id="cailon">1</span>-->
+<!--        </div>-->
+        <div class="field">
+            <div class="value left">1</div>
+            <input type="range" min="1" max="50" value="1" steps="1" id="concac">
+            <div class="value right">50</div>
+        </div>
+    </div>
+
+    <br/><br/>
+    <!--range-slide-->
+    <div class="sliderValue11122">
+        <h3 id="rentar">Rentar: <span id="cailonNew2">1</span></h3>
+    </div>
+    <div class="range">
+<!--        <div class="sliderValue">-->
+<!--            <span id="cailonNew">1</span>-->
+<!--        </div>-->
+        <div class="field">
+            <div class="value left">1</div>
+            <input type="range" min="1" max="200" value="1" steps="1" id="concac2">
+            <div class="value right">200</div>
+        </div>
+    </div>
+
+    <br/>
+    <h3>Method</h3>
+    <label>Chọn Phương thức nhận lương:</label>
+    <select name="" id="method">
+        <option value="1">Chuyển Khoản</option>
+        <option value="2">Tiền Mặt</option>
+    </select>
+    <br />
+    <br />
+    <input type="button" onclick="hello()" value="Submit form">
+    <p>---------------------------------------</p>
+    <p><span th:text="${bankingName}"></span ></p>
+    <tr th:each="shinhan : ${shinhan}">
+        <span>Lãi Suất Tốt Nhất:  </span><td th:text="${shinhan.MinLS}"></td><br/>
+        <span>Lãi Suất Tốt Nhất(Prime):  </span><td th:text="${shinhan.MinPrimeLS}"></td><br/>
+        <span>Lãi Suất Tệ Nhất:  </span><td th:text="${shinhan.MaxLS}"></td><br/><br/>
+        <span>Tổng Tiền Phải Trả ít nhất:  </span><td th:text="${shinhan.MinRental}"></td><br/>
+        <span>Tổng Tiền Phải Trả ít nhất(Prime):  </span><td th:text="${shinhan.MinRentalPrime}"></td><br/>
+        <span>Tổng Tiền Phải Trả Nhiều Nhất:  </span><td th:text="${shinhan.MaxRental}"></td><br/>
+    </tr>
+
+    <script>
+        function hello() {
+          var method = document.getElementById("method").value;
+          var salary = document.querySelector("#cailon2").textContent;
+          var rentar = document.querySelector("#cailonNew2").textContent;
+          location.replace("http://localhost:8091/server/"+ salary  + "/"  + rentar + "/"  + method);
+          <!--location.replace("http://localhost:8091/server");-->
+        }
+    </script>
+    <script>
+        const slideValue = document.querySelector("#cailon");
+        const slideValue2 = document.querySelector("#cailon2");
+        const inputSlider = document.querySelector("#concac");
+        inputSlider.oninput = (()=>{
+            let value = inputSlider.value;
+            slideValue2.textContent = value;
+            slideValue2.style.left = (value/2) + "%";
+            slideValue2.classList.add("show");
+            slideValue.textContent = value;
+            slideValue.style.left = (value/2) + "%";
+            slideValue.classList.add("show");
+        });
+        inputSlider.onblur = (()=>{
+            slideValue2.classList.remove("show");
+            slideValue.classList.remove("show");
+        });
+
+        const slideValueNew = document.querySelector("#cailonNew");
+        const slideValueNew2 = document.querySelector("#cailonNew2");
+        const inputSliderNew = document.querySelector("#concac2");
+        inputSliderNew.oninput = (()=>{
+            let value = inputSliderNew.value;
+            slideValueNew2.textContent = value;
+            slideValueNew2.style.left = (value/2) + "%";
+            slideValueNew2.classList.add("show");
+            slideValueNew.textContent = value;
+            slideValueNew.style.left = (value/2) + "%";
+            slideValueNew.classList.add("show");
+        });
+
+        inputSliderNew.onblur = (()=>{
+            slideValueNew2.classList.remove("show");
+            slideValueNew.classList.remove("show");
+        });
+    </script>
+</body>
+</html>
